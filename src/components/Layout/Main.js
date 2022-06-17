@@ -8,20 +8,16 @@ import {
   setPlaceMent,
   handleSidenavType,
   handleFixedNavbar,
-  handleSidebar
+  handleSidebar,
 } from "Redux/features/MainSlice";
 import SideNav from "./SideNav";
 import AntdHeaderRight from "./AntdHeader";
+import AntdFooter from "./AntdFooter";
 const { Sider, Header: AntHeader, Content } = Layout;
 export default function Main() {
   let { pathname } = useLocation();
-  const {
-    navFixed,
-    sideNavType,
-    sideNavColor,
-    placement,
-    openSidebar,
-  } = useSelector((state) => state.mainSlice);
+  const { navFixed, sideNavType, sideNavColor, placement, openSidebar } =
+    useSelector((state) => state.mainSlice);
   const dispatch = useDispatch();
   pathname = pathname.replace("/", "");
   useEffect(() => {
@@ -112,6 +108,7 @@ export default function Main() {
         <Content className="content-ant">
           <Outlet />
         </Content>
+        <AntdFooter />
       </Layout>
     </Layout>
   );

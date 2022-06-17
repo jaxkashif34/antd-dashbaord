@@ -1,21 +1,28 @@
 import React from "react";
-import {
-  Row,
-  Col,
-  Card,
-  Radio,
-  Table,
-  Upload,
-  message,
-  Progress,
-  Button,
-  Avatar,
-  Typography,
-} from "antd";
-import { columns, tableData } from "utils/TablesData";
+import { Row, Col, Card, Radio, Table, Upload, message } from "antd";
+import { columns, tableData, dataproject, project } from "utils/TablesData";
+const { Dragger } = Upload;
 export default function Tables() {
   const onChange = (e) => {
     console.log(`radio checked:${e.target.value}`);
+  };
+
+  const props = {
+    name: "file",
+    action: "",
+    headers: {
+      authorization: "authorization-text",
+    },
+    onChange({ file, fileList }) {
+      if (file.status !== "uploading") {
+        console.log(file, fileList);
+      }
+      if (file.status === "done") {
+        message.success(`${file.name} file uploaded successfully`);
+      } else if (file.status === "error") {
+        message.error(`${file.name} file upload failed`);
+      }
+    },
   };
   return (
     <>
@@ -53,7 +60,19 @@ export default function Tables() {
                   <Radio.Button value="store">STORE</Radio.Button>
                 </Radio.Group>
               }
-            ></Card>
+            >
+              <div className="table-responsive">
+                <Table
+                  columns={project}
+                  dataSource={dataproject}
+                  pagination={false}
+                  className="ant-border-space"
+                />
+              </div>
+              <div className="uploadfile pb-15 shadow-none">
+                <Dragger {...props}>Click or Drop to Upload</Dragger>
+              </div>
+            </Card>
           </Col>
         </Row>
       </div>
