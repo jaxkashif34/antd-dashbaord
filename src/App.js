@@ -5,6 +5,7 @@ import SignIn from "pages/signIn";
 import { Main } from "components/Layout";
 import Home from "pages/Home";
 import Tables from "pages/Tables";
+import Billing from "pages/Billing";
 export default function App() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Main />}>
           <Route path="dashboard" element={<Home />} />
           <Route path="tables" element={<Tables />} />
+          <Route path="billing" element={<Billing />} />
         </Route>
       </Routes>
     </>

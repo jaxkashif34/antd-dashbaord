@@ -91,6 +91,7 @@ export default function Main() {
                 handleSidenavColor={handleSideNavColor}
                 handleSidenavType={handleSidenavType}
                 handleFixedNavbar={handleFixedNavbar}
+                handleSidebar={handleSidebar}
               />
             </AntHeader>
           </Affix>
@@ -102,6 +103,7 @@ export default function Main() {
               handleSidenavColor={handleSideNavColor}
               handleSidenavType={handleSidenavType}
               handleFixedNavbar={handleFixedNavbar}
+              handleSidebar={handleSidebar}
             />
           </AntHeader>
         )}

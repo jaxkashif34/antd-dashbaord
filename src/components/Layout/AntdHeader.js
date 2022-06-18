@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { openDrawer, handleSidebar } from "Redux/features/MainSlice";
 import {
   Row,
   Col,
@@ -17,9 +16,6 @@ import {
 } from "antd";
 import {
   data,
-  wifi,
-  credit,
-  clockicon,
   bell,
   logsetting,
   toggler,
@@ -80,18 +76,16 @@ export default function AntdHeader({
   handleSidenavColor,
   name,
   onPress,
+  handleSidebar
 }) {
   const { sideNavType, visible, placement } = useSelector(
     (state) => state.mainSlice
   );
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(onPress());
-  }, []);
 
   return (
     <>
-      <div className="setting-drwer" onClick={() => dispatch(openDrawer(true))}>
+      <div className="setting-drwer" onClick={() => dispatch(onPress(true))}>
         {setting}
       </div>
       <Row gutter={[24, 0]}>
@@ -115,17 +109,17 @@ export default function AntdHeader({
         </Col>
         <Col span={24} md={18} className="header-control">
           <Badge size="small" count={4}>
-            <Dropdown overlay={menu} trigger={["click"]}>
+            <Dropdown overlay={menu} trigger={["click"]} placement="top">
               <a
                 href="#pablo"
                 className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
+                // onClick={(e) => e.preventDefault()}
               >
                 {bell}
               </a>
             </Dropdown>
           </Badge>
-          <Button type="link" onClick={() => dispatch(openDrawer(true))}>
+          <Button type="link" onClick={() => dispatch(onPress(true))}>
             {logsetting}
           </Button>
           <Button
@@ -142,9 +136,9 @@ export default function AntdHeader({
             placement={placement}
             visible={visible}
             closable={false}
-            onClose={() => dispatch(openDrawer(false))}
+            onClose={() => dispatch(onPress(false))}
           >
-            <div>
+            <div layout="vertical">
               <div className="header-top">
                 <Title level={4}>
                   Configure
