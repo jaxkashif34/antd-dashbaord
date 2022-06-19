@@ -84,27 +84,13 @@ export default function Main() {
       <Layout>
         {navFixed ? (
           <Affix>
-            <AntHeader className={`${navFixed ? "ant-header-fixed" : ""}`}>
-              <AntdHeaderRight
-                onPress={openDrawer}
-                name={pathname}
-                handleSidenavColor={handleSideNavColor}
-                handleSidenavType={handleSidenavType}
-                handleFixedNavbar={handleFixedNavbar}
-                handleSidebar={handleSidebar}
-              />
+            <AntHeader>
+              <AntdHeaderRight name={pathname} />
             </AntHeader>
           </Affix>
         ) : (
-          <AntHeader className={`${navFixed ? "ant-header-fixed" : ""}`}>
-            <AntdHeaderRight
-              onPress={openDrawer}
-              name={pathname}
-              handleSidenavColor={handleSideNavColor}
-              handleSidenavType={handleSidenavType}
-              handleFixedNavbar={handleFixedNavbar}
-              handleSidebar={handleSidebar}
-            />
+          <AntHeader>
+            <AntdHeaderRight name={pathname} />
           </AntHeader>
         )}
         <Content className="content-ant">

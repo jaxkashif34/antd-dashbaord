@@ -1,6 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  openDrawer,
+  handleFixedNavbar,
+  handleSideNavColor,
+  handleSidenavType,
+  setPlaceMent,
+  handleSidebar,
+} from "Redux/features/MainSlice";
+import {
   Row,
   Col,
   Breadcrumb,
@@ -70,14 +78,7 @@ const buttonList = [
   { color: "#fadb14", type: "yellow" },
   { color: "#111", type: "black" },
 ];
-export default function AntdHeader({
-  handleSidenavType,
-  handleFixedNavbar,
-  handleSidenavColor,
-  name,
-  onPress,
-  handleSidebar
-}) {
+export default function AntdHeader({name}) {
   const { sideNavType, visible, placement } = useSelector(
     (state) => state.mainSlice
   );
@@ -85,7 +86,7 @@ export default function AntdHeader({
 
   return (
     <>
-      <div className="setting-drwer" onClick={() => dispatch(onPress(true))}>
+      <div className="setting-drwer" onClick={() => dispatch(openDrawer(true))}>
         {setting}
       </div>
       <Row gutter={[24, 0]}>
@@ -119,7 +120,7 @@ export default function AntdHeader({
               </a>
             </Dropdown>
           </Badge>
-          <Button type="link" onClick={() => dispatch(onPress(true))}>
+          <Button type="link" onClick={() => dispatch(openDrawer(true))}>
             {logsetting}
           </Button>
           <Button
@@ -136,7 +137,7 @@ export default function AntdHeader({
             placement={placement}
             visible={visible}
             closable={false}
-            onClose={() => dispatch(onPress(false))}
+            onClose={() => dispatch(openDrawer(false))}
           >
             <div layout="vertical">
               <div className="header-top">
@@ -154,7 +155,7 @@ export default function AntdHeader({
                         <Button
                           type={type}
                           key={index}
-                          onClick={() => dispatch(handleSidenavColor(color))}
+                          onClick={() => dispatch(handleSideNavColor(color))}
                         >
                           1
                         </Button>
