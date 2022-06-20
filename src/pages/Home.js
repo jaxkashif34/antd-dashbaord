@@ -179,7 +179,6 @@ export default function Home() {
         <Row gutter={[24, 0]}>
           <AntCard xl={14}>
             <Row>
-              {/* need to take a look at gutter  */}
               <Col xs={24} md={12} sm={24} lg={12} xl={14} className="mb-24">
                 <div className="h-full col-content p-20">
                   <div className="ant-muse">

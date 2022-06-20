@@ -206,26 +206,41 @@ export default function Billing() {
               className="transactions-list ant-newest"
               itemLayout="horizontal"
               dataSource={newest}
-              renderItem={(
-                amountcolor,
-                textclass,
-                amount,
-                description,
-                title,
-                avatar
-              ) => (
+              renderItem={(item) => (
                 <List.Item>
                   <List.Item.Meta
-                    title={title}
-                    description={description}
+                    title={item.title}
+                    description={item.description}
                     avatar={
-                      <Avatar size="small" className={textclass}>
-                        {avatar}
+                      <Avatar size="small" className={item.textclass}>
+                        {item.avatar}
                       </Avatar>
                     }
                   />
                   <div className="amount">
-                    <span className={amountcolor}>{amount}</span>
+                    <span className={item.amountcolor}>{item.amount}</span>
+                  </div>
+                </List.Item>
+              )}
+            />
+            <List
+              header={<h6>YESTERDAY</h6>}
+              className="yestday transactions-list"
+              itemLayout="horizontal"
+              dataSource={yesterday}
+              renderItem={(item) => (
+                <List.Item>
+                  <List.Item.Meta
+                    avatar={
+                      <Avatar size="small" className={item.textclass}>
+                        {item.avatar}
+                      </Avatar>
+                    }
+                    title={item.title}
+                    description={item.description}
+                  />
+                  <div className="amount">
+                    <span className={item.amountcolor}>{item.amount}</span>
                   </div>
                 </List.Item>
               )}

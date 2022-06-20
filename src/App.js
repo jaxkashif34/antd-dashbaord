@@ -6,6 +6,7 @@ import { Main } from "components/Layout";
 import Home from "pages/Home";
 import Tables from "pages/Tables";
 import Billing from "pages/Billing";
+import Profile from "pages/Profile";
 export default function App() {
   return (
     <>
@@ -17,6 +18,8 @@ export default function App() {
           <Route path="dashboard" element={<Home />} />
           <Route path="tables" element={<Tables />} />
           <Route path="billing" element={<Billing />} />
+          <Route path="rtl" element={<Home />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </>

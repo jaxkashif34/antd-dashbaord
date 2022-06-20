@@ -5,7 +5,6 @@ import {
   handleFixedNavbar,
   handleSideNavColor,
   handleSidenavType,
-  setPlaceMent,
   handleSidebar,
 } from "Redux/features/MainSlice";
 import {
@@ -57,12 +56,23 @@ const { Title, Text } = Typography;
 const menu = (
   <List
     min-width="100%"
-    className="header-notifications-dropdown "
+    className="header-notifications-dropdown"
+    style={{
+      backgroundColor: "#fff",
+      boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)",
+      borderRadius: "1rem",
+    }}
     itemLayout="horizontal"
     dataSource={data}
     renderItem={(item) => (
-      <List.Item>
+      <List.Item style={{ borderRadius: "1rem" }}>
         <List.Item.Meta
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginLeft: "1rem",
+          }}
           avatar={<Avatar shape="square" src={item.avatar} />}
           title={item.title}
           description={item.description}
@@ -78,7 +88,7 @@ const buttonList = [
   { color: "#fadb14", type: "yellow" },
   { color: "#111", type: "black" },
 ];
-export default function AntdHeader({name}) {
+export default function AntdHeader({ name }) {
   const { sideNavType, visible, placement } = useSelector(
     (state) => state.mainSlice
   );
@@ -110,12 +120,13 @@ export default function AntdHeader({name}) {
         </Col>
         <Col span={24} md={18} className="header-control">
           <Badge size="small" count={4}>
-            <Dropdown overlay={menu} trigger={["click"]} placement="top">
-              <a
-                href="#pablo"
-                className="ant-dropdown-link"
-                // onClick={(e) => e.preventDefault()}
-              >
+            <Dropdown
+              overlay={menu}
+              trigger={["click"]}
+              arrow
+              overlayStyle={{ width: "20%" }}
+            >
+              <a href="#pablo" className="ant-dropdown-link">
                 {bell}
               </a>
             </Dropdown>

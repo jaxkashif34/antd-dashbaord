@@ -1,13 +1,16 @@
 import React from "react";
 import { Layout, Menu, Button } from "antd";
 import { items } from "utils/SignInUpData";
+import { Link } from "react-router-dom";
 const { Header } = Layout;
 
 const AntdHeader = ({ btn }) => {
   return (
     <Header>
       <div className="header-col header-brand">
-        <h5>Ant DashBoard</h5>
+        <Link to="/dashboard">
+          <h5>Ant DashBoard</h5>
+        </Link>
       </div>
       <div className="header-col header-nav">
         <Menu
