@@ -1,13 +1,17 @@
-
-# Ant Dashboard 
+# Ant Dashboard
 
 Re-design ant Dashboard with redux
 
-# preview 
+ScreenShot
+![Application](./src/assets/application.png)
+
+# preview
+
 https://antd-dashbaord.vercel.app/dashboard
 
-# Pages 
-Dashboard 
+# Pages
+
+Dashboard
 https://antd-dashbaord.vercel.app/dashboard
 
 Tabels
@@ -27,4 +31,3 @@ https://antd-dashbaord.vercel.app/sign-in
 
 Sign-UP
 https://antd-dashbaord.vercel.app/sign-up
-
