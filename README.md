@@ -3,7 +3,7 @@
 Re-design ant Dashboard with redux
 
 ScreenShot
-![Application](./src/assets/application.png)
+![Application](./src/assets/images/application.png)
 
 # preview
 
