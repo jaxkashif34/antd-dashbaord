@@ -53,7 +53,7 @@ The following technologies have been used to build this project
 1.  Clone the repository to your local machine by using the following command in your terminal
 
     ```sh
-   git clone https://github.com/jaxkashif34/antd-dashbaord.git
+    git clone https://github.com/jaxkashif34/antd-dashbaord.git
     ```
 
 2.  Change the directory to the cloned repository by using the following command
