@@ -23,7 +23,7 @@ A modern and stylish dashboard built using [Ant Design](https://ant.design/) and
 
 ## <a id="Deployment">Deployment</a><br>
 
-The project is deployed on [Vercel](https://vercel.com/dashboard). The demo site is available at https://material-kit-swart.vercel.app/dashboard/app.
+The project is deployed on [Vercel](https://vercel.com/dashboard). The demo site is available at https://antd-dashbaord.vercel.app/dashboard.
 
 ## <a id="Features">Features</a><br>
 
